@@ -6,7 +6,7 @@
   "scripts": {
     "build": "cd build && npm install --no-audit --no-fund && node build.js",
     "install:server": "cd server && npm install --omit=dev --no-audit --no-fund",
-    "pages": "npm run build && mkdir -p docs && cp dist/index.html docs/index.html && touch docs/.nojekyll",
+    "pages": "npm run build && cp dist/index.html index.html && touch .nojekyll",
     "start": "node server/index.js",
     "dev": "ALLOW_DEV_LOGIN=1 node server/index.js",
     "test": "node test/cpp.test.js && node test/html.test.js && node test/core.test.js && node test/ui.test.js && node test/arena.test.js && node test/github.test.js && node test/server.test.js"

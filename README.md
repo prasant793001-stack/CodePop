@@ -47,7 +47,7 @@ Open the deployed site in Chrome on Android: the **📲 Install** button appears
 
 ### Website on GitHub Pages (practice mode)
 
-`docs/index.html` is the single-file demo build, served by GitHub Pages (Settings > Pages > Deploy from branch > `main` / `/docs`). After changing the app, run `npm run pages`, commit `docs/`, and push. Pages is static hosting, so it cannot run the server: sign-in, real groups and the shared Top 10 come from the Node server (below).
+`index.html` at the repo root is the single-file demo build, served by GitHub Pages (Settings > Pages > Deploy from a branch > `main` / `(root)`). The empty `.nojekyll` file makes Pages serve it as-is instead of rendering this README. After changing the app, run `npm run pages`, commit `index.html`, and push. Pages is static hosting, so it cannot run the server: sign-in, real groups and the shared Top 10 come from the Node server (below).
 
 ## 4. How the challenges are scored
 
