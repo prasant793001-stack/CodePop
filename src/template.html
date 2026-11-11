@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-skin="blocky">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#3fa9f5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="CodePop">
+<!--WEBHEAD-->
+<title>CodePop</title>
+<style>
+/*FONTS*/
+/*CSS*/
+</style>
+</head>
+<body>
+<div id="app" data-lang="html">
+  <header id="top">
+    <div class="logo" id="logo"><span class="logo-mark" id="logoMark">⚡</span><span class="logo-text">CodePop</span></div>
+    <span class="grow"></span>
+    <button class="chip inst" id="btnInstall" hidden><span class="ic">📲</span><span data-t="arena.install"></span></button>
+    <button class="chip arena" id="btnArena"><span class="ic">🏆</span><span data-t="arena.title"></span><em class="badge" id="arenaBadge" hidden>!</em></button>
+    <button class="xp" id="xpPill" aria-label="XP"><b id="xpLv"></b><i class="xp-bar"><u id="xpBar"></u></i></button>
+    <button class="round" id="btnSet" aria-label="Settings">🎨</button>
+  </header>
+
+  <main id="main">
+    <section id="screenWrap">
+      <div class="pane-head" id="liveHead">
+        <b class="ph-t"><span>📺</span><span data-t="live.title"></span></b>
+        <div class="seg2" id="liveSeg" role="tablist">
+          <button data-v="screen" data-tip="live.screen">📺</button>
+          <button data-v="term" data-tip="live.term">🖥️</button>
+          <button data-v="both" data-tip="live.both">◫</button>
+        </div>
+        <button class="round sm" id="btnSwap" data-tip="live.swap" aria-label="Swap sides">⇄</button>
+      </div>
+      <div class="bezel" id="bezel">
+        <div class="bezel-bar">
+          <span class="led" id="led"></span>
+          <span class="bezel-title" data-t="screen.title"></span>
+          <span class="bezel-btns">
+            <button class="chip run" id="btnRun"><span class="ic">▶</span><span data-t="run"></span></button>
+            <button class="chip" id="btnStep"><span class="ic">👣</span><span data-t="step"></span></button>
+            <button class="chip stop" id="btnStop" hidden><span class="ic">■</span><span data-t="stop"></span></button>
+          </span>
+        </div>
+        <div class="crt" id="crt">
+          <div class="off" id="screenOff">
+            <div class="off-tv">📺</div>
+            <b data-t="screen.off"></b>
+            <small id="offHint"></small>
+          </div>
+          <iframe id="frame" sandbox="allow-scripts" title="screen" hidden></iframe>
+          <div class="console" id="console" dir="ltr" hidden>
+            <div class="con-out" id="conOut"></div>
+            <form class="con-in" id="conForm" hidden autocomplete="off"><span>›</span><input id="conInput" type="text" enterkeyhint="send" autocapitalize="off" autocorrect="off" spellcheck="false"><button type="submit">↵</button></form>
+            <div class="boxes" id="boxes" hidden></div>
+          </div>
+          <div class="scan"></div>
+        </div>
+      </div>
+      <div id="paneTerm" hidden>
+        <div class="pt-tools" id="ptTools"></div>
+        <div class="pt-body" id="ptBody"></div>
+      </div>
+    </section>
+
+    <div id="splitter" role="separator" aria-orientation="horizontal" tabindex="0"><i></i></div>
+
+    <section id="work">
+      <div id="chBar" class="chbar" hidden></div>
+      <div id="explain" class="explain"></div>
+      <div id="editorWrap">
+        <div class="ed-top">
+          <div class="files" id="langSeg" role="tablist">
+            <button class="file" data-l="html" role="tab"><span class="tab-ic">🌐</span><span>index.html</span></button>
+            <button class="file" data-l="cpp" role="tab"><span class="tab-ic">⚙️</span><span>main.cpp</span></button>
+          </div>
+          <span class="ed-btns">
+            <button id="btnUndo" aria-label="Undo">↶</button>
+            <button id="btnRedo" aria-label="Redo">↷</button>
+            <button id="btnStarter" data-tip="starter" aria-label="Starter code">📥</button>
+            <button id="btnBlank" data-tip="clear.code" aria-label="Blank screen">🧹</button>
+            <button id="btnGit" data-tip="git.push" aria-label="Push to GitHub">🐙</button>
+          </span>
+        </div>
+        <div class="ed-body" id="edBody" dir="ltr">
+          <div class="gutter"><div id="gut"></div></div>
+          <div class="ed-code">
+            <pre id="hl" aria-hidden="true"></pre>
+            <textarea id="ta" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" wrap="off" aria-label="Code editor"></textarea>
+          </div>
+        </div>
+        <div class="keys" id="keys" dir="ltr"></div>
+      </div>
+      <div id="sheet" hidden>
+        <div class="sheet-head"><b id="sheetTitle"></b><span class="sheet-tools" id="sheetTools"></span><button class="round sm" id="sheetClose" aria-label="Close">✕</button></div>
+        <div class="sheet-body" id="sheetBody"></div>
+      </div>
+      <nav id="dock">
+        <button data-tab="term"><span class="d-e">🖥️</span><span data-t="tab.term"></span></button>
+        <button data-tab="problems"><span class="d-e">🐛</span><span data-t="tab.problems"></span><em class="badge" id="badge" hidden>0</em></button>
+        <button data-tab="lines"><span class="d-e">🔍</span><span data-t="tab.lines"></span></button>
+        <button data-tab="missions"><span class="d-e">🎯</span><span data-t="tab.missions"></span></button>
+      </nav>
+    </section>
+  </main>
+
+  <div id="hub" hidden>
+    <div class="hub-head"><b class="hub-title" id="hubTitle"></b><span class="hub-who" id="hubWho"></span><button class="round sm" id="hubClose" aria-label="Close">✕</button></div>
+    <div class="hub-body" id="hubBody"></div>
+    <nav class="hub-tabs" id="hubTabs"></nav>
+  </div>
+  <div id="modal" class="modal" hidden>
+    <div class="modal-card" id="modalCard"></div>
+  </div>
+  <div id="modal2" class="modal m2" hidden>
+    <div class="modal-card wide" id="modal2Card"></div>
+  </div>
+  <div id="toast" role="status"></div>
+  <div id="fx" aria-hidden="true"></div>
+</div>
+<script>
+/*JS*/
+</script>
+<!--WEBTAIL-->
+</body>
+</html>

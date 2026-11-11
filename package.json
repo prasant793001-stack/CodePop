@@ -1,0 +1,14 @@
+{
+  "name": "codepop",
+  "version": "2.0.0",
+  "private": true,
+  "description": "CodePop: kid-friendly C++ and HTML learning app with level challenges, groups, a Top 10 and AI-copy detection.",
+  "scripts": {
+    "build": "cd build && npm install --no-audit --no-fund && node build.js",
+    "install:server": "cd server && npm install --omit=dev --no-audit --no-fund",
+    "start": "node server/index.js",
+    "dev": "ALLOW_DEV_LOGIN=1 node server/index.js",
+    "test": "node test/cpp.test.js && node test/html.test.js && node test/core.test.js && node test/ui.test.js && node test/arena.test.js && node test/github.test.js && node test/server.test.js"
+  },
+  "engines": { "node": ">=20" }
+}
