@@ -1,5 +1,7 @@
 # CodePop
 
+**▶ Play it now: <https://prasant793001-stack.github.io/CodePop/>** (practice mode: free coding, challenges, and practice friends; real Google sign-in, shared groups and the Top 10 need the server below)
+
 Source: <https://github.com/prasant793001-stack/CodePop>
 
 A kid-friendly web app (and installable Android app) for learning **C++** and **HTML**: live line-by-line explanations, 8 themes, 4 spoken languages, plus an **Arena** with level challenges, groups and duels, a Top 10, and hidden-code detection of AI-copied answers.
@@ -42,6 +44,10 @@ Environment variables are listed in `.env.example`. In production the server ref
 ### Android install
 
 Open the deployed site in Chrome on Android: the **📲 Install** button appears in the header (and *⋮ > Install app* works too). It installs as a full-screen app with its own icon and works offline for free coding. iPhone: Share > *Add to Home Screen*. To list it on Google Play, wrap the same URL with [PWABuilder](https://www.pwabuilder.com) (Trusted Web Activity).
+
+### Website on GitHub Pages (practice mode)
+
+`docs/index.html` is the single-file demo build, served by GitHub Pages (Settings > Pages > Deploy from branch > `main` / `/docs`). After changing the app, run `npm run pages`, commit `docs/`, and push. Pages is static hosting, so it cannot run the server: sign-in, real groups and the shared Top 10 come from the Node server (below).
 
 ## 4. How the challenges are scored
 
